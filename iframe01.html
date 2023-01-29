@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IFrame Example</title>
+    <script>
+        window.onload = function () {
+            var cardinalCollectionForm = document.querySelector('#cardinal_collection_form');
+            if (cardinalCollectionForm) { // form exists
+                cardinalCollectionForm.submit();
+            }
+        }
+
+        window.addEventListener("message", function (event) {
+            if (event.origin === "https://centinelapistag.cardinalcommerce.com") {
+                console.log(event.data);
+            }
+        }, false);
+    </script>
+</head>
+<body>
+<iframe height="10" id="cardinal_collection_iframe" name="collectionIframe" style="display:none;" width="10"></iframe>
+<form action=https://centinelapistag.cardinalcommerce.com/V1/Cruise/Collect id="cardinal_collection_form" method="POST"
+      target="collectionIframe">
+    <input id="cardinal_collection_form_input" name="JWT" type="hidden"
+           value="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0NTc2NTYxZS00NTg5LTRmMjMtODQzMi0zYWY0YzZhYzBiYjUiLCJpYXQiOjE2NzQ5Nzk0MTYsImlzcyI6IjVkZDgzYmYwMGU0MjNkMTQ5OGRjYmFjYSIsImV4cCI6MTY3NDk4MzAxNiwiT3JnVW5pdElkIjoiNjNkMTVkMzgzNjBlMjgzNzY3Njk0MGU4IiwiUmVmZXJlbmNlSWQiOiI4ZTFjZGRkMy1jMTZjLTQ0M2YtODRiZS01ZTNlMTcyMTgyOWEifQ.HDrgGgUE-gWIE0gC8EdgPoyItfV9NmLu5EITDNxb5IE">
+</form>
+</body>
+</html>
