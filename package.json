@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/nandohidayat/test-git#readme",
   "dependencies": {
-    "express": "^4.18.2",
-    "http-server": "^14.1.1"
+    "express": "^4.18.2"
   }
 }
